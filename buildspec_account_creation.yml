@@ -14,12 +14,15 @@ phases:
         commands: 
             - echo "we are in the pre build phase"
             - python3 -V
+            - pip3 install --upgrade pip3
             - pip3 install boto3
             - pip3 install awscli
     build:
         commands:
             - echo "we are in the build block"
+            - pip3 show boto3
             - echo "we will run some tests"
+            - aws --version
     post_build:
         commands:
             - echo "we are in the post build phase"
