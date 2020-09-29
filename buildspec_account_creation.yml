@@ -16,8 +16,8 @@ phases:
             - pip show boto3
             - terraform -v
             - aws --version
-            - ls -lart
-            - cd /
+            - cd `find / -name *testRepo*`
+            - pwd
             - python test.py
     build:
         commands:
