@@ -16,6 +16,7 @@ phases:
             - pip show boto3
             - terraform -v
             - aws --version
+            - ls -lart
             - python test.py
     build:
         commands:
