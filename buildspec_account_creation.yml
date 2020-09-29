@@ -5,19 +5,17 @@ phases:
         runtime-versions:
             python: 3.7
         commands:
-            - echo "installing something"
+            - echo "installing Terraform"
             - "cd /usr/bin"
             - "curl -O https://releases.hashicorp.com/terraform/0.12.29/terraform_0.12.29_linux_amd64.zip"
             - "unzip terraform_0.12.29_linux_amd64.zip"
-            - pip install boto3
-            - pip install awscli
-            - pip show boto3
-            - aws --version
-            - terraform -v
     pre_build:
         commands: 
             - echo "we are in the pre build phase"
-            - python3 -V
+            - python3 -
+            - pip show boto3
+            - terraform -v
+            - aws --version
     build:
         commands:
             - echo "we are in the build block"
